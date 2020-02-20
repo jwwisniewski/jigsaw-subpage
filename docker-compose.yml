@@ -4,3 +4,4 @@ services:
     image: joshrob/php73fpm
     volumes:
       - .:/var/www/html
+      - ~/.composer:/root/.composer
