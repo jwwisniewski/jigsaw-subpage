@@ -23,6 +23,7 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "jwwisniewski/jigsaw-core": "dev-master"
+    "jwwisniewski/jigsaw-core": "dev-master",
+    "laravelcollective/html": "^6.0"
   }
 }
