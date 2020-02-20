@@ -1,0 +1,28 @@
+{
+  "name": "jwwisniewski/jigsaw-subpage",
+  "config": {
+    "sort-packages": true,
+    "secure-http": false
+  },
+  "autoload": {
+    "psr-4": {
+      "jwwisniewski\\Jigsaw\\Subpage\\": "src"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "jwwisniewski\\Jigsaw\\Subpage\\JigsawSubageServiceProvider"
+      ]
+    }
+  },
+  "repositories": [{
+    "type": "vcs",
+    "url": "https://github.com/jwwisniewski/jigsaw-core"
+  }],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "jwwisniewski/jigsaw-core": "dev-master"
+  }
+}
