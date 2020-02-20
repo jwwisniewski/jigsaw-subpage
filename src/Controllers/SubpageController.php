@@ -2,6 +2,9 @@
 
 namespace jwwisniewski\Jigsaw\Subpage\Controllers;
 
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Str;
@@ -12,16 +15,18 @@ use jwwisniewski\Jigsaw\Subpage\Subpage;
 
 class SubpageController extends Controller
 {
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
     public function index()
     {
         $subpages = Subpage::all();
 
-        return view('subpage.index', ['subpageList' => $subpages]);
+        return view('jigsaw-subpage::index', ['subpageList' => $subpages]);
     }
 
     public function create()
     {
-        return view('subpage.create');
+        return view('jigsaw-subpage::create');
     }
 
     public function store(StoreSubpage $request)
@@ -50,7 +55,7 @@ class SubpageController extends Controller
 
     public function edit(Subpage $subpage)
     {
-        return view('subpage.edit', compact('subpage'));
+        return view('jigsaw-subpage::edit', compact('subpage'));
     }
 
     public function update(UpdateSubpage $request, Subpage $subpage)
