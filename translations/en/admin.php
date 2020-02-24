@@ -1,5 +1,5 @@
 <?php
 
 return [
-        'module-title' => 'Sub-Pages'
+    'module-title' => 'Sub-Pages',
 ];

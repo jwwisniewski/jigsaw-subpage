@@ -20,5 +20,4 @@ class Subpage extends Model
 
     protected $multiLang = ['title', 'url', 'keywords', 'description', 'contents'];
     protected $fillable = ['title', 'url', 'keywords', 'description', 'contents'];
-
 }
