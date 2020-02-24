@@ -32,7 +32,7 @@ class SubpageController extends Controller
     public function store(StoreSubpage $request)
     {
         $validated = $request->validated();
-        if($validated['url'] === null) {
+        if ($validated['url'] === null) {
             $validated['url'] = $validated['title'];
         }
         $validated['url'] = Str::slug($validated['url']);
@@ -50,7 +50,6 @@ class SubpageController extends Controller
             'editLang' => $request->get('editLang'),
             'returnPath' => $request->get('returnPath'),
         ]);
-
     }
 
     public function edit(Subpage $subpage)
@@ -61,7 +60,7 @@ class SubpageController extends Controller
     public function update(UpdateSubpage $request, Subpage $subpage)
     {
         $validated = $request->validated();
-        if($validated['url'] === null) {
+        if ($validated['url'] === null) {
             $validated['url'] = $validated['title'];
         }
         $validated['url'] = Str::slug($validated['url']);
