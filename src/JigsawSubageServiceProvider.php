@@ -4,6 +4,7 @@ namespace jwwisniewski\Jigsaw\Subpage;
 
 use Illuminate\Support\ServiceProvider;
 use jwwisniewski\Jigsaw\Core\Jigsaw;
+use jwwisniewski\Jigsaw\Core\Module;
 
 class JigsawSubageServiceProvider extends ServiceProvider
 {
@@ -25,8 +26,9 @@ class JigsawSubageServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/../routes/routes.php');
         $this->loadMigrationsFrom(__DIR__.'/../migrations');
         $this->loadViewsFrom(__DIR__.'/../views', 'jigsaw-subpage');
+        $this->loadTranslationsFrom(__DIR__.'/../translations', 'jigsaw-subpage');
 
-        $jigsaw->registerModule(Subpage::class);
+        $jigsaw->registerModule(Subpage::class, 'subpage', 'subpage.index', Module::NOT_INSTANTIABLE);
     }
 
     /**

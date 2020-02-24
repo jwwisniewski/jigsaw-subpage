@@ -2,7 +2,6 @@
   "name": "jwwisniewski/jigsaw-subpage",
   "config": {
     "sort-packages": true,
-    "secure-http": false
   },
   "autoload": {
     "psr-4": {
