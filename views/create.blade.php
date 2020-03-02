@@ -21,7 +21,7 @@
 
     {!! Form::submit(__('ui.saveAndContinue'), ['name' => \jwwisniewski\Jigsaw\Core\Enum\SaveMode::SAVE_AND_CONTINUE]) !!}
     {!! Form::submit(__('ui.saveAndReturn'), ['name' => \jwwisniewski\Jigsaw\Core\Enum\SaveMode::SAVE_AND_RETURN]) !!}
-    {!! Form::button(__('ui.cancel'), ['onclick' => new Illuminate\Support\HtmlString("window.location.href='" . base64_decode(request()->get('returnPath')) . "'")]) !!}
+    {!! Form::button(__('ui.cancel'), ['class' => 'cancelButton', 'onclick' => new Illuminate\Support\HtmlString("window.location.href='" . base64_decode(request()->get('returnPath')) . "'")]) !!}
 
     {!! Form::hidden('editLang', request()->get('editLang', config('jigsaw.defaultClientLocale'))) !!}
     {!! Form::hidden('returnPath', request()->get('returnPath')) !!}

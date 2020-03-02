@@ -7,8 +7,8 @@
     edit
 </h1>
 
-@include('common.errors')
-@include('common.editLang')
+@include('jigsaw-core::common.errors')
+@include('jigsaw-core::common.editLang')
 
 {!! Form::model($subpage, ['route' => ['subpage.update', $subpage->id]]) !!}
 
