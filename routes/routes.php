@@ -13,5 +13,4 @@ Route::middleware('web')
                 Route::get('destroy/{subpage}', ['as' => 'subpage.destroy', 'uses' => 'SubpageController@destroy']);
             });
         });
-
     });
