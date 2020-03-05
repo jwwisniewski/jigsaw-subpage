@@ -24,7 +24,12 @@ class JigsawSubageServiceProvider extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__.'/../routes/routes.php');
         $this->loadMigrationsFrom(__DIR__.'/../migrations');
-        $this->loadViewsFrom(__DIR__.'/../views', 'jigsaw-subpage');
+        $this->loadViewsFrom(__DIR__.'/../views/admin', 'jigsaw-subpage-admin');
+        $this->loadViewsFrom(__DIR__.'/../views/client', 'jigsaw-subpage-client');
+        $this->publishes([
+            __DIR__.'/../views/client' => resource_path('views/vendor/jigsaw-subpage-client'),
+        ], ['jigsaw-subpage', 'jigsaw-client']);
+
         $this->loadTranslationsFrom(__DIR__.'/../translations', 'jigsaw-subpage');
 
         $jigsaw->registerModule(Subpage::class, 'subpage', 'subpage.index', Module::NOT_INSTANTIABLE);

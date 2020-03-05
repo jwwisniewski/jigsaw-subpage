@@ -21,12 +21,12 @@ class SubpageController extends Controller
     {
         $subpages = Subpage::all();
 
-        return view('jigsaw-subpage::index', ['subpageList' => $subpages]);
+        return view('jigsaw-subpage-admin::index', ['subpageList' => $subpages]);
     }
 
     public function create()
     {
-        return view('jigsaw-subpage::create');
+        return view('jigsaw-subpage-admin::create');
     }
 
     public function store(StoreSubpage $request)
@@ -54,7 +54,7 @@ class SubpageController extends Controller
 
     public function edit(Subpage $subpage)
     {
-        return view('jigsaw-subpage::edit', compact('subpage'));
+        return view('jigsaw-subpage-admin::edit', compact('subpage'));
     }
 
     public function update(UpdateSubpage $request, Subpage $subpage)
